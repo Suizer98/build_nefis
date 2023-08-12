@@ -2,7 +2,7 @@
 
 ## Description
 
-This projects aim to compile libNefis.a and libNefis.so so it can be used for https://gitlab.com/suizer98/nefis2nc.
+This projects aim to compile libNefis.a and libNefis.so so it can be used for https://github.com/Suizer98/nefis2nc.
 
 This directory is checked out from: 
 https://svn.oss.deltares.nl/repos/delft3d/trunk/src/utils_lgpl/nefis/

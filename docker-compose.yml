@@ -1,0 +1,11 @@
+version: '3.9'
+services:
+  build_nefis:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: build_nefis
+    volumes:
+      - .:/app
+    working_dir: /app
+    # entrypoint: ["sleep", "infinity"]

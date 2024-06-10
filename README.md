@@ -10,6 +10,9 @@ using SVN.
 There might be some dependencies or files that Make will look for througout the 
 repository.
 
+Tech stacks:
+![Tech stacks](https://skillicons.dev/icons?i=c,cmake,docker,ubuntu,bash)
+
 ## Current progress
 
 ### Latest updates

@@ -2,21 +2,24 @@
 
 ## Description
 
-This projects aim to compile libNefis.a and libNefis.so so it can be used for https://github.com/Suizer98/nefis2nc.
+This projects aim to compile libNefis.a and libNefis.so so it can be used for https://github.com/Suizer98/nefis2nc or any other purposes related to Deltares products.
 
 This directory is checked out from: 
 https://svn.oss.deltares.nl/repos/delft3d/trunk/src/utils_lgpl/nefis/
 using SVN.
-There might be some dependencies or files that Make will look for througout the 
+There might be some dependencies or files that `Make` command will look for througout the 
 repository.
 
 Tech stacks:
+
 ![Tech stacks](https://skillicons.dev/icons?i=c,cmake,docker,ubuntu,bash)
 
 ## Current progress
 
 ### Latest updates
-- Currently we did a roundabout way to compile the libNefis.so from the libNefis.a instead. Since the static library file is created successfully we can assume it is solid.
+- The compiled `libnefis.so` can be found in here inside root directory, feel free to use.
+- I did a roundabout way to compile the libNefis.so from the libNefis.a instead. I was getting errors during part of compiling `libnefis.so`.
+- Since the static library file `libNefis.a` is created successfully we can assume it is solid.
 - The hack is to run our own gcc compile command and try to resolve any undefined symbols, luckily there is only one important symbol needed to be defined properly (see gp.c part)
 
 ```

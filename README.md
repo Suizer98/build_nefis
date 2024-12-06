@@ -2,7 +2,7 @@
 
 ## Description
 
-This projects aim to compile libNefis.a and libNefis.so so it can be used for https://github.com/Suizer98/nefis2nc or any other purposes related to Deltares products.
+This projects aim to compile libNefis.a and libNefis.so so it can be used for https://github.com/Suizer98/nefis2nc or any other purposes related to Nefis structure data (mainly Deltares products).
 
 This directory is checked out from: 
 https://svn.oss.deltares.nl/repos/delft3d/trunk/src/utils_lgpl/nefis/
@@ -17,10 +17,10 @@ Tech stacks:
 ## Current progress
 
 ### Latest updates
-- The compiled `libnefis.so` can be found in here inside root directory, feel free to use.
+- The compiled `libnefis.so` can be found in here inside root directory.
 - I did a roundabout way to compile the libNefis.so from the libNefis.a instead. I was getting errors during part of compiling `libnefis.so`.
-- Since the static library file `libNefis.a` is created successfully we can assume it is solid.
-- The hack is to run our own gcc compile command and try to resolve any undefined symbols, luckily there is only one important symbol needed to be defined properly (see gp.c part)
+- Since the static library file `libNefis.a` is created successfully I assumed it is solid.
+- The trick is to separately run gcc compile command and try to resolve any undefined symbols, luckily there is only one important symbol needed to be defined properly (see gp.c part)
 
 ```
 WORKDIR /app/packages/nefis/src/.libs
@@ -64,9 +64,12 @@ ERROR: failed to solve: process "/bin/sh -c ./build.sh" did not complete success
 ```
 docker build -t build_nefis .
 docker run -it --rm build_nefis /bin/bash
+```
 OR
-docekr-compose up --build
-
+```
+docker-compose up --build
+```
+```
 make clean
 ./configure --help
 ./configure CFLAGS=-WERROR 
@@ -103,7 +106,7 @@ File: \\wsl$\Ubuntu-20.04\home\suizer\sven\nefis\packages\nefis\src\oc.c
 ```
 
 3. gp.c
-- Forcefully defined FILE_SEEK as lseek, see line 80:
+- Force defined FILE_SEEK as lseek, see line 80:
 ```
 File: \\wsl.localhost\Ubuntu-20.04\home\suizer\build_nefis\packages\nefis\src\gp.c
 46: #include <unistd.h> /* grep -r "lseek64" /usr/include and it showed this file */
